@@ -1,0 +1,42 @@
+{
+  "scripts": {
+    "test": "nyc --reporter=text mocha --inspect --require babel-register --require source-map-support --recursive",
+    "build": "babel src --out-dir js",
+    "prepare": "npm run build",
+    "watch": "babel --watch src --out-dir js",
+    "coverage": "nyc report --reporter=text-lcov"
+  },
+  "main": "js/index.js",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  },
+  "name": "iso-language-codes",
+  "version": "1.0.0",
+  "description": "ISO 639-1 codes",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "ISO",
+    "639-1",
+    "codes"
+  ],
+  "author": "pubcore",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.6.1",
+    "eslint-plugin-mocha": "^5.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1"
+  },
+  "dependencies": {}
+}
