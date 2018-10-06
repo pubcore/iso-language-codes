@@ -17,11 +17,11 @@
     ]
   },
   "name": "iso-language-codes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ISO 639-1, -2/T and -2/B codes with names",
   "repository": {
-      "type": "git",
-      "url": "git+https://github.com/pubcore/iso-language-codes.git"
+    "type": "git",
+    "url": "git+https://github.com/pubcore/iso-language-codes.git"
   },
   "directories": {
     "test": "test"
