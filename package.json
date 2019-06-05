@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "nyc --reporter=text mocha --inspect --require babel-register --require source-map-support --recursive",
+    "test": "nyc --reporter=text mocha --inspect --require @babel/register --require source-map-support --recursive",
     "build": "babel src --out-dir js",
     "prepare": "npm run build",
     "watch": "babel --watch src --out-dir js",
@@ -10,10 +10,10 @@
   "license": "MIT",
   "babel": {
     "presets": [
-      "env"
+      "@babel/preset-env"
     ],
     "plugins": [
-      "transform-object-rest-spread"
+      "@babel/plugin-proposal-object-rest-spread"
     ]
   },
   "name": "iso-language-codes",
@@ -33,14 +33,16 @@
   ],
   "author": "pubcore",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
     "chai": "^4.2.0",
-    "eslint": "^5.6.1",
-    "eslint-plugin-mocha": "^5.2.0",
-    "mocha": "^5.2.0",
-    "nyc": "^13.0.1"
+    "eslint": "^5.16.0",
+    "eslint-plugin-mocha": "^5.3.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
   },
   "dependencies": {}
 }
