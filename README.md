@@ -7,7 +7,7 @@ see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 		npm i --save iso-language-codes
 
 ##### Examples
-		import codes, {by639_1, by639_2T, by639_2B} from 'iso-country-codes'
+		import codes, {by639_1, by639_2T, by639_2B} from 'iso-language-codes'
 		var code
 
 		code = codes[0]
