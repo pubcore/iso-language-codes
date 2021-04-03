@@ -17,7 +17,7 @@
     ]
   },
   "name": "iso-language-codes",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "ISO 639-1, -2/T and -2/B codes with names",
   "repository": {
     "type": "git",
