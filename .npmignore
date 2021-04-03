@@ -1,3 +1,7 @@
 src
 !dist/
 .nyc_output
+test
+.eslintrc.js
+.eslintignore
+.travice.yml
