@@ -17,7 +17,7 @@
     ]
   },
   "name": "iso-language-codes",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "ISO 639-1, -2/T and -2/B codes with names",
   "repository": {
     "type": "git",
@@ -45,11 +45,13 @@
     "nyc": "^15.1.0",
     "tsd": "^0.17.0"
   },
-  "tsd":{
+  "tsd": {
     "directory": "test",
-    "compilerOptions":{
-      "paths":{
-        "iso-language-codes": ["./"]
+    "compilerOptions": {
+      "paths": {
+        "iso-language-codes": [
+          "./"
+        ]
       }
     }
   }
