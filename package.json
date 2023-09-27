@@ -1,21 +1,13 @@
 {
   "scripts": {
-    "test": "nyc --reporter=text mocha --inspect --require @babel/register --require source-map-support --recursive && npx tsd",
-    "build": "babel src --out-dir js",
+    "test": "vitest --run index",
+    "build": "tsup",
     "prepare": "npm run build",
-    "watch": "babel --watch src --out-dir js",
-    "coverage": "nyc report --reporter=text-lcov"
+    "prepublishOnly": "npm pack && npm rm iso-language-codes && npm i -D iso-language-codes-*.tgz && vitest --run exports && npm run test",
+    "typecheck": "vitest typecheck --run",
+    "coverage": "vitest run --coverage index"
   },
-  "main": "js/index.js",
   "license": "MIT",
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      "@babel/plugin-proposal-object-rest-spread"
-    ]
-  },
   "name": "iso-language-codes",
   "version": "1.1.0",
   "description": "ISO 639-1, -2/T and -2/B codes with names",
@@ -23,36 +15,37 @@
     "type": "git",
     "url": "git+https://github.com/pubcore/iso-language-codes.git"
   },
-  "directories": {
-    "test": "test"
+  "main": "dist/cjs/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/cjs/index.js"
+    }
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "ISO",
     "639-1",
-    "codes"
+    "codes",
+    "iso language codes"
   ],
   "author": "pubcore",
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.10.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/register": "^7.10.5",
-    "chai": "^4.2.0",
+    "@vitest/coverage-istanbul": "^0.34.5",
     "eslint": "^8.0.1",
-    "eslint-plugin-mocha": "^9.0.0",
-    "mocha": "^9.1.3",
-    "nyc": "^15.1.0",
-    "tsd": "^0.18.0"
+    "husky": "^8.0.3",
+    "iso-language-codes": "file:iso-language-codes-1.1.0.tgz",
+    "istanbul-badges-readme": "^1.8.5",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.5"
   },
-  "tsd": {
-    "directory": "test",
-    "compilerOptions": {
-      "paths": {
-        "iso-language-codes": [
-          "./"
-        ]
-      }
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run coverage && istanbul-badges-readme && git add 'README.md'"
     }
   }
 }

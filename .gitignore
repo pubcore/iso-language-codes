@@ -6,3 +6,5 @@ node_modules/
 .nyc_output
 js/
 dist/
+iso-language-codes-*.tgz
+coverage/

@@ -1,12 +1,16 @@
-[![Build Status](https://travis-ci.org/pubcore/iso-language-codes.svg?branch=master)](https://travis-ci.org/pubcore/iso-language-codes)
+| Test coverage               |                         |                           |                   | Thanks            |
+| --------------------------- | ----------------------- | ------------------------- | ----------------- | ----------------- |
+| ![Statements](https://img.shields.io/badge/statements-100%25-brightgreen.svg?style=flat) | ![Branches](https://img.shields.io/badge/branches-100%25-brightgreen.svg?style=flat) | ![Functions](https://img.shields.io/badge/functions-100%25-brightgreen.svg?style=flat) | ![Lines](https://img.shields.io/badge/lines-100%25-brightgreen.svg?style=flat) | [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/myq7pryb6fo) |
+
 
 ### ISO language codes
-see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+Based on https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes  
 
 ##### Install
-		npm i --save iso-language-codes
+		npm i iso-language-codes
 
-##### Examples
+##### Example
+
 		import codes, {by639_1, by639_2T, by639_2B} from 'iso-language-codes'
 		var code
 
@@ -30,7 +34,6 @@ see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
   			iso639_2B: 'eng'
 		}
 
-
 		code = iso639_2T['fra']
 		//code is
 		{
@@ -43,3 +46,10 @@ see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 
 		//get an array of all iso639_2B codes:
 		var code2BList = Object.keys(iso639_2B)
+
+#### Example (CommonJS)
+
+		const codes = require('iso-language-codes');
+		const {by639_1, by639_2T, by639_2B} = codes;
+
+		//see first example above for usage ...
