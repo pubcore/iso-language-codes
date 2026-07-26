@@ -1,10 +1,18 @@
-## 2.0.0 2023-09-27
-### ⚠ BREAKING CHANGES (potentially)
-* exports ESM and CommonJS for backward compatibility
+## 2.0.1 2026-07-26
 
-### Refactoring 
-* migrate to typescript
-* migrate to vitest
+- pump several dev dependencies
+
+## 2.0.0 2023-09-27
+
+### ⚠ BREAKING CHANGES (potentially)
+
+- exports ESM and CommonJS for backward compatibility
+
+### Refactoring
+
+- migrate to typescript
+- migrate to vitest
 
 ### Testing
-* test ESM exports of tarball
+
+- test ESM exports of tarball
